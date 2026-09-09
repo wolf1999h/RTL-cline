@@ -1,0 +1,44 @@
+{
+  "name": "cline-rtl-smart-support",
+  "displayName": "Cline RTL Smart Support",
+  "description": "Smart right-to-left language support for Cline and Roo Cline chat webviews.",
+  "version": "0.1.4",
+  "publisher": "local-rtl-tools",
+  "author": "wolf1999h (Tired Wolf)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wolf1999h/RTL-cline"
+  },
+  "homepage": "https://github.com/wolf1999h/RTL-cline#readme",
+  "bugs": {
+    "url": "https://github.com/wolf1999h/RTL-cline/issues"
+  },
+  "icon": "icon.png",
+  "engines": { "vscode": "^1.84.0" },
+  "categories": ["Other", "Chat"],
+  "keywords": ["cline", "roo-cline", "rtl", "persian", "farsi", "arabic", "hebrew", "bidi"],
+  "activationEvents": ["onStartupFinished"],
+  "main": "./dist/extension.js",
+  "files": ["dist", "package.json", "README.md", "CHANGELOG.md", "LICENSE", "icon.png"],
+  "contributes": {
+    "commands": [
+      { "command": "cline-rtl.activateAuto", "title": "Cline RTL: Activate (Auto)" },
+      { "command": "cline-rtl.activateAlways", "title": "Cline RTL: Activate (Always RTL)" },
+      { "command": "cline-rtl.activateLtr", "title": "Cline RTL: Force LTR" },
+      { "command": "cline-rtl.deactivate", "title": "Cline RTL: Deactivate" },
+      { "command": "cline-rtl.status", "title": "Cline RTL: Status" }
+    ],
+    "configuration": {
+      "title": "Cline RTL",
+      "properties": {
+        "cline-rtl.mode": { "type": "string", "enum": ["auto", "always", "ltr"], "default": "auto", "description": "Default Cline chat direction mode." },
+        "cline-rtl.rtlLanguages": { "type": "array", "items": { "type": "string" }, "default": ["arabic", "hebrew", "syriac", "thaana", "nko"], "description": "RTL Unicode script families enabled by the detector." },
+        "cline-rtl.minimumRtlLetters": { "type": "number", "minimum": 1, "default": 1, "description": "Minimum strong RTL letters required in Auto mode." },
+        "cline-rtl.textFont": { "type": "string", "default": "", "description": "Optional font family for RTL prose and chat input." },
+        "cline-rtl.reloadAfterPatch": { "type": "boolean", "default": true, "description": "Reload the window after patching Cline webview assets." }
+      }
+    }
+  },
+  "scripts": { "test": "node --test test/*.test.js", "build": "node build.js", "package": "node build.js && node package-vsix.js" }
+}

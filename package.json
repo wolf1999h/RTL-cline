@@ -40,5 +40,5 @@
       }
     }
   },
-  "scripts": { "test": "node --test test/*.test.js", "build": "node build.js", "package": "node build.js && node package-vsix.js" }
+  "scripts": { "test": "node --test test/*.test.js", "build": "node build.js", "package": "node build.js && node package-vsix.js", "package:marketplace": "node build.js && node package-vsix.js marketplace", "package:openvsx": "node build.js && node package-vsix.js openvsx" }
 }

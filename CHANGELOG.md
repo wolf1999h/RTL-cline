@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.5
+
+- Updated the extension publisher to `wolf1999h` and aligned the VSIX manifest metadata.
+- Fixed the packaged license (`LICENSE.txt`), content types, and marketplace links.
+
 ## 0.1.4
 
 - Improved the cross-platform installation and troubleshooting guidance for VS Code, VSCodium and Flatpak users.

@@ -1,6 +1,6 @@
 {
-  "name": "cline-rtl-smart-support",
-  "displayName": "Cline RTL Smart Support",
+  "name": "cline-rtl-smart-support-plus",
+  "displayName": "Cline RTL Smart Support Plus",
   "description": "Smart right-to-left language support for Cline and Roo Cline chat webviews.",
   "version": "0.1.4",
   "publisher": "wolf1999h",

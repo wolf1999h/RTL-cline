@@ -27,8 +27,8 @@ fs.writeFileSync(path.join(staging, '[Content_Types].xml'), `<?xml version="1.0"
 fs.writeFileSync(path.join(staging, 'extension.vsixmanifest'), `<?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011">
   <Metadata>
-    <Identity Language="en-US" Id="cline-rtl-smart-support" Version="${packageJson.version}" Publisher="${packageJson.publisher}" />
-    <DisplayName>Cline RTL Smart Support</DisplayName>
+    <Identity Language="en-US" Id="cline-rtl-smart-support-plus" Version="${packageJson.version}" Publisher="${packageJson.publisher}" />
+    <DisplayName>Cline RTL Smart Support Plus</DisplayName>
     <Description xml:space="preserve">Smart right-to-left language support for Cline and Roo Cline chat webviews.</Description>
     <Tags>cline,roo-cline,rtl,persian,farsi,arabic,hebrew,bidi</Tags>
     <Categories>Other,Chat</Categories>
@@ -57,7 +57,7 @@ fs.writeFileSync(path.join(staging, 'extension.vsixmanifest'), `<?xml version="1
   </Assets>
 </PackageManifest>
 `);
-const output = path.join(root, `cline-rtl-smart-support-${packageJson.version}.vsix`);
+const output = path.join(root, `cline-rtl-smart-support-plus-${packageJson.version}.vsix`);
 fs.rmSync(output, { force: true });
 const result = spawnSync('zip', ['-X', '-q', '-r', output, '.'], { cwd: staging, stdio: 'inherit' });
 if (result.status !== 0) process.exit(result.status || 1);
